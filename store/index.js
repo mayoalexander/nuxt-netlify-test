@@ -47,7 +47,29 @@ const store = new Vuex.Store({
     preferredBranch: {}, // holds user's favorited branch (cookie for now)
     mapBranch: {}, // Holds the branch currently focused in branch map
     errorPrompt: false,
-    errorNotice: []
+    errorNotice: [],
+    posts: {
+      all: [
+        {
+          id: '5555',
+          title: 'title man',
+          subtitle: 'subtitle man',
+          body: 'this is the body'
+        },
+        {
+          id: '2222',
+          title: 'title man',
+          subtitle: 'subtitle man',
+          body: 'this is the body'
+        },
+        {
+          id: '1111',
+          title: 'title man',
+          subtitle: 'subtitle man',
+          body: 'this is the body'
+        }
+      ]
+    }
   },
 
   getters: {

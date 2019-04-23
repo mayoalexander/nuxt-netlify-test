@@ -26,7 +26,13 @@ export default {
       timeout: 15000
     })
     const { data } = await travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72')
-    return { post: data, post2: data }
+    // const data = app.store.state.posts.all.find(post => post.id === params.slug)
+    // console.log({
+    //   app: data
+    // })
+    return { post: data }
+  },
+  data () {
   },
   head () {
     return {
@@ -34,9 +40,8 @@ export default {
     }
   },
   mounted () {
-    console.log({
-      laksdjf: this
-    })
+  },
+  computed: {
   }
 }
 </script>
