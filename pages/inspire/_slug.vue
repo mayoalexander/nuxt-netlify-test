@@ -40,6 +40,17 @@ export default {
     }
   },
   mounted () {
+    const travisHowlerAPI = axios.create({
+      baseURL: process.env.TRAVIS_HOWLER_API,
+      headers: {
+        'Authorization': process.env.TRAVIS_HOWLER_API_TOKEN
+      },
+      timeout: 15000
+    })
+    const { data } = travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72')
+    console.log({
+      mountedRequest: data
+    })
   },
   computed: {
   }
