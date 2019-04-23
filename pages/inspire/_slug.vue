@@ -25,14 +25,12 @@ export default {
       },
       timeout: 15000
     })
-    const { data } = await travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72')
+    const { data } = await travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72/')
     // const data = app.store.state.posts.all.find(post => post.id === params.slug)
     // console.log({
     //   app: data
     // })
     return { post: data }
-  },
-  data () {
   },
   head () {
     return {
@@ -40,16 +38,8 @@ export default {
     }
   },
   mounted () {
-    const travisHowlerAPI = axios.create({
-      baseURL: process.env.TRAVIS_HOWLER_API,
-      headers: {
-        'Authorization': process.env.TRAVIS_HOWLER_API_TOKEN
-      },
-      timeout: 15000
-    })
-    const { data } = travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72')
     console.log({
-      mountedRequest: data
+      post: this.post
     })
   },
   computed: {
