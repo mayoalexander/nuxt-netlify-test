@@ -6,12 +6,14 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build --no-lock",
     "start": "nuxt start",
+    "build:api": "netlify-lambda build server",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "netlify-lambda": "^1.4.5",
     "nuxt": "^2.2.0",
     "vue-cookies": "^1.5.13",
     "vuetify": "^1.3.6"

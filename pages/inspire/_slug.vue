@@ -22,19 +22,18 @@ export default {
       baseURL: process.env.TRAVIS_HOWLER_API,
       headers: {
         'Authorization': process.env.TRAVIS_HOWLER_API_TOKEN
-      },
-      timeout: 15000
+      }
     })
     const { data } = await travisHowlerAPI.get('/post/' + '3ea65d90-f4ba-477e-b47d-2350d4151d72/')
-    // const data = app.store.state.posts.all.find(post => post.id === params.slug)
-    // console.log({
-    //   app: data
-    // })
     return { post: data }
   },
   head () {
     return {
-      title: this.post.title
+      title: this.post.title,
+      meta: [
+        { name: 'twitter:title', content: this.post.title }
+        // 'twitter:card': 'large'
+      ]
     }
   },
   mounted () {
